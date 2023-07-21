@@ -22,5 +22,11 @@ namespace Negocio
             D_personas datos = new D_personas();
             return datos.insertXupdatePersona(Opcion, persona);
         }
+
+        public static string DeletePersona(int id)
+        {
+            D_personas datos = new D_personas();
+            return datos.delete_persona(id);
+        }
     }
 }

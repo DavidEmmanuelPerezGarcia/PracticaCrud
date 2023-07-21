@@ -48,6 +48,7 @@
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.txt_buscar = new System.Windows.Forms.TextBox();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.grp_personas.SuspendLayout();
             this.grp_opciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
@@ -177,19 +178,20 @@
             // 
             // grp_opciones
             // 
+            this.grp_opciones.Controls.Add(this.btn_eliminar);
             this.grp_opciones.Controls.Add(this.btn_limpiar);
             this.grp_opciones.Controls.Add(this.btn_actualizar);
             this.grp_opciones.Controls.Add(this.btn_nuevo);
             this.grp_opciones.Location = new System.Drawing.Point(27, 606);
             this.grp_opciones.Name = "grp_opciones";
-            this.grp_opciones.Size = new System.Drawing.Size(447, 105);
+            this.grp_opciones.Size = new System.Drawing.Size(605, 105);
             this.grp_opciones.TabIndex = 1;
             this.grp_opciones.TabStop = false;
             this.grp_opciones.Text = "Opciones";
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(281, 21);
+            this.btn_limpiar.Location = new System.Drawing.Point(292, 21);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(100, 65);
             this.btn_limpiar.TabIndex = 10;
@@ -245,11 +247,21 @@
             this.txt_buscar.Size = new System.Drawing.Size(766, 22);
             this.txt_buscar.TabIndex = 14;
             // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Location = new System.Drawing.Point(426, 21);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(100, 65);
+            this.btn_eliminar.TabIndex = 13;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 723);
+            this.ClientSize = new System.Drawing.Size(1031, 745);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.dgv_datos);
@@ -289,6 +301,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox txt_buscar;
+        private System.Windows.Forms.Button btn_eliminar;
     }
 }
 

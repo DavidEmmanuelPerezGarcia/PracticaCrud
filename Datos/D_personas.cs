@@ -75,5 +75,33 @@ namespace Datos
             }
             return rspta;
         }
+        public string delete_persona(int id_persona)
+        {
+            string rspta = string.Empty;
+            SqlConnection conn = new SqlConnection();
+
+            try
+            {
+                conn = Conexion.GetInstancia().CrearConexion();
+                SqlCommand cmd = new SqlCommand("sp_eliminar_persona", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id_persona",SqlDbType.Int).Value=id_persona;
+                conn.Open();
+                rspta=cmd.ExecuteNonQuery()==1 ? "OK":"No se pudo eliminar el registro";
+            }
+            catch (Exception ex)
+            {
+
+                rspta = ex.Message;
+            }
+            finally 
+            {
+                if(conn.State==ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return rspta;
+        }
     }
 }

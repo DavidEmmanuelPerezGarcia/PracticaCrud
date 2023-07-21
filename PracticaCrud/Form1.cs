@@ -133,5 +133,23 @@ namespace PracticaCrud
         {
             this.reset();
         }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            string rspta = string.Empty;
+            id = Convert.ToInt32(dgv_datos.CurrentRow.Cells["id_persona"].Value);
+
+            rspta= N_personas.DeletePersona(id);
+
+            if (rspta.Equals("OK"))
+            {
+                MessageBox.Show("Datos eliminados", "Aviso del sistema");
+                this.getPersona("%");
+            }
+            else
+            {
+                MessageBox.Show(rspta, "Aviso del sistema");
+            }
+        }
     }
 }
